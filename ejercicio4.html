@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 4</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	
+</head>
+
+<body>
+
+	<script type="text/javascript">
+		var futbol = "true";
+		var baloncesto = "true";
+		var tenis = "";
+		var waterpolo = "true";
+		
+		$(document).ready(function() {
+			
+			$('#panel').hide();
+			$('input').click(function(event) {
+				console.log($(this).attr('id'));
+				if ($(this).attr('id') == 'input') {
+					$('#panel').show();
+					
+					$('#futbol').prop( "checked",futbol);
+					$('#baloncesto').prop( "checked",baloncesto);
+					$('#tenis').prop( "checked",tenis);
+					$('#waterpolo').prop( "checked",waterpolo);
+					
+
+				} else {$('#panel').hide();
+							$('#futbol').prop( "checked","false");
+							$('#baloncesto').prop( "checked","false");
+							$('#tenis').prop( "checked","false");
+							$('#waterpolo').prop( "checked","false");
+							}
+			
+
+			});
+			
+		});
+	</script>
+
+
+  <div class="container">
+    <form action="datos.php" method="POST" class="form-horizontal" role="form">
+      <div class="form-group">
+        <legend>Los Deportes</legend>
+      </div>
+
+      <div class="form-group">
+        <p>¿Te gustan los deportes?</p>
+        <div class="radio">
+          <label>
+            <input type="radio" name="prueba" id="input" value="si"> Si
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="prueba" id="input2" value="no"> No
+          </label>
+        </div>
+      </div>
+
+      <div id ="panel" class="form-group">
+        <p>Selecciona tus deportes favoritos</p>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id ="futbol" value="futbol"> Futbol
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="baloncesto" value="baloncesto"> Baloncesto
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="tenis" value="tenis"> Tenis
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" id="waterpolo" value="waterpolo"> Waterpolo
+          </label>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-10 col-sm-offset-2">
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

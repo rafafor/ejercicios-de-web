@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Prueba del DOM (document object model)</title>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+	<script type="text/javascript">
+		
+		$(document).ready(function() {
+			var a = 6;
+			$("button").click(function(evento) {
+				$('li:last').after('<li>texto '+a+'</li>');
+				a++;
+       evento.preventDefault();
+			});
+			 
+		});
+
+		
+
+	</script>
+
+
+	</head>
+ <body>
+   <ul>
+   	<li>texto 1</li>
+   	<li>texto 2</li>
+ 		<li>texto 3</li>
+ 		<li>texto 4</li>
+ 		<li>texto 5</li>
+   	
+   </ul>
+
+   <button>Pulsa para añadir una linea</button>
+ </body>
+ </html>

@@ -17,15 +17,23 @@ a img {
 	margin-left: -290px;
 }
 </style>
-<script src="jquery-1.10.2.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
+		var imagenes = $('img');
+		imagenes.click(function(event) {
+			$(this).slideUp('slow');
+				event.preventDefault();
+		
+		});
+
+
 	});
 </script>
 </head>
 <body>
 	<div id="imagenes">
-		<a href="index.php"> <img src="imagenes/inicio.gif" /></a> <a
+		<a href="#"> <img  src="imagenes/inicio.gif" /></a> <a
 			href="pisos.html"> <img src="imagenes/pisos.gif" />
 		</a> <a href="cocinas.html"> <img src="imagenes/cocinas.gif" />
 		</a> <a href="banos.html"> <img src="imagenes/baños.gif" />

@@ -6,8 +6,19 @@
 <script src="jquery-1.10.2.js"></script>
 <script>
 	$(document).ready(function() {
+		$('p').mouseenter(function() {
+			$(this).css("color","red");
+	
+		});
+		
+		$('p').mouseleave(function() {
+			$(this).css("color","black");
+	
+		});
+		$(".miclase").on("click", clicAlerta);
+		
 		function clicAlerta() {
-			alert("Has hecho clic");
+			alert ("Esto es el primer parrafo");
 		}
 	});
 </script>

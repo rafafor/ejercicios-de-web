@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 4</title>
+	<style type="text/css">
+		
+		.row {
+			margin : 10px;
+		}
+		li {
+			overflow: auto;
+	
+		}
+		.badge {
+			margin-right: 5px;
+		}
+
+	</style>
+	<!-- Latest compiled and minified CShttp:S & JS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+<div class="container">
+
+<div class="row">
+	<form action="recibirlista.php" method="GET" class="form-inline" role="form">
+	
+		<div class="form-group">
+			<label  for="">Introduce el alimento</label>
+			<input type="text" class="form-control" id="elemento" placeholder="Frutas">
+		</div>
+	
+		<button id="btnanadir"  class="btn btn-info">Añadir Elemento</button>	
+	
+		<button id="btncomprar"  type="submit" class="btn btn-primary">Realizar Compra</button>
+	</form>
+</div>
+<div class="row">
+	
+	
+		<ul class="list-group">
+			<li class="list-group-item">Peras
+			<button type="button" class="btn btn-default pull-right shop">
+  		<span class="glyphicon glyphicon-shopping-cart">
+  		</span>
+			</button>
+			<span class="badge pull-center shop">0</span>
+			</li>
+			
+			<li class="list-group-item " >Manzanas
+			<button type="button" class="btn btn-default pull-right">
+  		<span class="glyphicon glyphicon-shopping-cart">
+  		</span>
+			</button>
+			<span class="badge pull-center shop">0</span>
+			</li>
+			<li class="list-group-item" >Zanahorias
+			<button type="button" class="btn btn-default pull-right">
+  		<span class="glyphicon glyphicon-shopping-cart">
+
+  		</span>
+			</button>
+			<span class="badge pull-center shop">0</span>
+			</li>
+</div>
+	</div>
+		
+		<script>
+
+			$(document).ready(function() {
+				
+				$('#btnanadir').click(function(event) {
+					var elemento = $('#elemento').val();
+					if (elemento !=="") {
+						$('li:last').after('<li class="list-group-item">'+elemento+'</li>');
+						$('#elemento').val('');
+				
+					}
+					event.preventDefault();
+			
+				});
+				
+				
+
+				$('ul').on('click','li', function() {
+					
+					$(this).toggleClass('active');
+					var badge = $(this).children('.badge');
+					var contador = badge.html();
+					
+					badge.html(parseInt(contador)+1);
+
+				});
+
+			});		
+
+
+		</script>
+
+
+</body>
+</html>

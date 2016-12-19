@@ -6,6 +6,7 @@
 <script src="jquery-1.10.2.js"></script>
 <script>
 	$(document).ready(function() {
+		
 		//también podríamos haber utilizado mouseover y mouseout
 		//también hover(), que sería lo más fácil.
 		$("p").on("mouseenter mouseleave", function(e) {
@@ -21,8 +22,15 @@
 		}
 		$(".miclase").on("click", clicAlerta);
 
+		$('button').click(function(event) {
+			$( ".miclase" ).off( "click", clicAlerta );
+		
+		});
+
 	});
-</script>
+
+
+	</script>
 </head>
 <body>
 	<script>
